@@ -1,314 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<title>Urban Space Design | Architecture, Structure & Construction</title>
 
-  <title>Urban Space Design | Architecture & Construction</title>
+<meta name="description"
+content="Urban Space Design provides architectural design, structural design, construction, interiors, estimation and structural consultancy.">
 
-  <meta name="description"
-        content="Urban Space Design provides architectural design, structural design, construction and interior solutions.">
+<style>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',Arial,sans-serif;
+    color:#151515;
+    background:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(255,255,255,.96);
+    z-index:1000;
+    border-bottom:1px solid #e8e8e8;
+}
+
+.nav{
+    height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    width:155px;
+    height:auto;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:12px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+}
+
+.nav-links a:hover{
+    opacity:.55;
+}
+
+.nav-button{
+    background:#111;
+    color:#fff;
+    padding:13px 22px;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.menu{
+    display:none;
+    font-size:25px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding-top:74px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    color:#fff;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.20)),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85")
+    center/cover;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.kicker{
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(48px,7vw,82px);
+    line-height:1.02;
+    font-weight:300;
+    letter-spacing:-3px;
+    margin-bottom:25px;
+}
+
+.hero-text{
+    font-size:18px;
+    font-weight:300;
+    max-width:520px;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 25px;
+    border:1px solid #fff;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.btn-light{
+    background:#fff;
+    color:#111;
+}
+
+.btn-outline{
+    color:#fff;
+}
+
+.hero-bottom{
+    position:absolute;
+    bottom:28px;
+    left:4%;
+    right:4%;
+    display:flex;
+    justify-content:space-between;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* GENERAL */
+
+section{
+    padding:95px 0;
+}
+
+.section-label{
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#777;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-size:clamp(34px,5vw,52px);
+    line-height:1.1;
+    font-weight:300;
+}
+
+/* SERVICES */
+
+.services-heading{
+    display:flex;
+    justify-content:space-between;
+    gap:50px;
+    margin-bottom:50px;
+}
+
+.services-heading p{
+    max-width:360px;
+    color:#555;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid #ddd;
+    border-left:1px solid #ddd;
+}
+
+.service{
+    padding:38px 25px;
+    min-height:210px;
+    border-right:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+
+.service-number{
+    font-size:11px;
+    color:#888;
+    margin-bottom:25px;
+}
+
+.service h3{
+    font-size:17px;
+    font-weight:500;
+    margin-bottom:12px;
+}
+
+.service p{
+    color:#666;
+    font-size:14px;
+}
+
+/* PROJECTS */
+
+.projects-section{
+    background:#f5f5f3;
+}
+
+.projects-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:40px;
+}
+
+.view-all{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.project{
+    background:#ddd;
+    overflow:hidden;
+}
+
+.project img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+    transition:transform .5s;
+}
+
+.project:hover img{
+    transform:scale(1.03);
+}
+
+.project-info{
+    padding:17px 0 8px;
+}
+
+.project-category{
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#777;
+}
+
+.project-title{
+    font-size:16px;
+    margin-top:5px;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:500px;
+    background:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85")
+    center/cover;
+}
+
+.about-content p{
+    color:#555;
+    font-size:16px;
+    margin:25px 0;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid #ddd;
+    margin-top:35px;
+    padding-top:25px;
+}
+
+.stat strong{
+    display:block;
+    font-size:35px;
+    font-weight:300;
+}
+
+.stat span{
+    font-size:11px;
+    color:#777;
+}
+
+/* PROCESS */
+
+.process-section{
+    background:#f5f5f3;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    margin-top:50px;
+}
+
+.process-item{
+    padding:25px;
+    border-top:1px solid #bbb;
+}
+
+.process-number{
+    font-size:11px;
+    color:#777;
+    margin-bottom:25px;
+}
+
+.process h3{
+    font-size:17px;
+    margin-bottom:10px;
+    font-weight:500;
+}
+
+.process p{
+    font-size:13px;
+    color:#666;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#111;
+    color:#fff;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.contact .section-label{
+    color:#aaa;
+}
+
+.contact h2{
+    font-size:clamp(40px,6vw,65px);
+    line-height:1.05;
+    font-weight:300;
+}
+
+.contact-text{
+    color:#aaa;
+    margin:25px 0 30px;
+}
+
+.contact-details{
+    border-left:1px solid #444;
+    padding-left:35px;
+}
+
+.contact-details div{
+    margin-bottom:22px;
+}
+
+.contact-details span{
+    display:block;
+    color:#777;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:4px;
+}
+
+.contact-details a{
+    font-size:15px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0b0b0b;
+    color:#777;
+    padding:30px 0;
+    font-size:11px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav{
+        height:68px;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f5;
-      color: #171717;
-      line-height: 1.6;
+    .logo{
+        width:125px;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(247,247,245,0.95);
-      border-bottom: 1px solid #ddd;
+    .nav-links,
+    .nav-button{
+        display:none;
     }
 
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .menu{
+        display:block;
     }
 
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 2px;
+    .hero{
+        min-height:92vh;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #171717;
-      margin-left: 20px;
-      font-size: 14px;
+    .hero h1{
+        font-size:50px;
+        letter-spacing:-2px;
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 25px 70px;
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.35),
-          rgba(0,0,0,0.35)
-        ),
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=85")
-        center/cover;
-      color: white;
+    .hero-text{
+        font-size:16px;
     }
 
-    .hero-content {
-      max-width: 900px;
-      margin: auto;
-      width: 100%;
+    .hero-bottom{
+        display:none;
     }
 
-    .hero p {
-      font-size: 15px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+    section{
+        padding:70px 0;
     }
 
-    .hero h1 {
-      font-size: clamp(42px, 8vw, 85px);
-      line-height: 1;
-      margin-bottom: 25px;
-      letter-spacing: -2px;
+    .services-heading{
+        display:block;
     }
 
-    .hero-description {
-      max-width: 600px;
-      font-size: 18px;
-      margin-bottom: 35px;
+    .services-heading p{
+        margin-top:20px;
     }
 
-    .button {
-      display: inline-block;
-      padding: 14px 24px;
-      background: white;
-      color: #111;
-      text-decoration: none;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      font-weight: 600;
-      font-size: 14px;
+    .services{
+        grid-template-columns:1fr;
     }
 
-    .button.dark {
-      background: #111;
-      color: white;
+    .projects-heading{
+        display:block;
     }
 
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 25px;
+    .view-all{
+        display:inline-block;
+        margin-top:20px;
     }
 
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 15px;
+    .projects{
+        grid-template-columns:1fr;
     }
 
-    h2 {
-      font-size: clamp(34px, 6vw, 55px);
-      line-height: 1.1;
-      margin-bottom: 45px;
+    .project img{
+        height:280px;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: #ccc;
+    .about{
+        grid-template-columns:1fr;
+        gap:35px;
     }
 
-    .service {
-      background: #f7f7f5;
-      padding: 40px 30px;
-      min-height: 190px;
+    .about-image{
+        min-height:330px;
     }
 
-    .service h3 {
-      font-size: 23px;
-      margin-bottom: 12px;
+    .process{
+        grid-template-columns:1fr 1fr;
     }
 
-    .service p {
-      color: #666;
-      font-size: 15px;
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:45px;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    .contact-details{
+        border-left:none;
+        border-top:1px solid #444;
+        padding:30px 0 0;
     }
 
-    .project {
-      background: #ddd;
-      min-height: 300px;
-      overflow: hidden;
+    .footer-inner{
+        display:block;
     }
 
-    .project img {
-      width: 100%;
-      height: 100%;
-      min-height: 300px;
-      object-fit: cover;
-      transition: transform .5s ease;
+    .footer-inner div{
+        margin-bottom:8px;
     }
+}
 
-    .project:hover img {
-      transform: scale(1.04);
-    }
-
-    .about {
-      max-width: 850px;
-    }
-
-    .about p {
-      font-size: 20px;
-      color: #444;
-    }
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-
-    .process-item {
-      border-top: 1px solid #999;
-      padding-top: 20px;
-    }
-
-    .number {
-      font-size: 13px;
-      color: #777;
-      margin-bottom: 20px;
-    }
-
-    .process-item h3 {
-      margin-bottom: 10px;
-    }
-
-    .contact {
-      background: #171717;
-      color: white;
-      max-width: none;
-    }
-
-    .contact-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 25px;
-    }
-
-    .contact h2 {
-      max-width: 700px;
-    }
-
-    footer {
-      background: #111;
-      color: #aaa;
-      padding: 25px;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    @media (max-width: 700px) {
-
-      nav a {
-        display: none;
-      }
-
-      .hero {
-        min-height: 90vh;
-      }
-
-      .services,
-      .projects {
-        grid-template-columns: 1fr;
-      }
-
-      .process {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      section {
-        padding: 65px 20px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <div class="logo">URBAN SPACE DESIGN</div>
+<div class="container nav">
 
-    <div>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<a href="#home">
+<img src="logo.png" class="logo" alt="Urban Space Design">
+</a>
+
+<nav class="nav-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#process">Process</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<a href="#contact" class="nav-button">Let's Talk</a>
+
+<div class="menu">☰</div>
+
+</div>
 </header>
 
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="home">
 
-  <div class="hero-content">
+<div class="container">
 
-    <p>Architecture • Structure • Construction</p>
+<div class="hero-content">
 
-    <h1>
-      Designing spaces.<br>
-      Building possibilities.
-    </h1>
+<div class="kicker">
+Architecture &nbsp; | &nbsp; Structure &nbsp; | &nbsp; Construction &nbsp; | &nbsp; Interiors
+</div>
 
-    <div class="hero-description">
-      Urban Space Design is a multidisciplinary design and
-      construction practice creating thoughtful, functional
-      and timeless spaces.
-    </div>
+<h1>
+Designing spaces.<br>
+Building possibilities.
+</h1>
 
-    <a href="#projects" class="button">
-      View Projects
-    </a>
+<p class="hero-text">
+Thoughtful design. Stronger structures.
+Better living.
+</p>
 
-    <a href="#contact" class="button dark">
-      Start Your Project
-    </a>
+<div class="buttons">
 
-  </div>
+<a href="#projects" class="btn btn-light">
+View Projects →
+</a>
+
+<a href="#contact" class="btn btn-outline">
+Start Your Project
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-bottom">
+<span>Residential / Commercial / Interiors / Consultancy</span>
+<span>Spaces people belong to</span>
+</div>
 
 </section>
 
@@ -317,109 +618,124 @@
 
 <section id="services">
 
-  <div class="section-label">
-    What we do
-  </div>
+<div class="container">
 
-  <h2>
-    Design to<br>
-    construction.
-  </h2>
+<div class="services-heading">
 
-  <div class="services">
+<div>
+<div class="section-label">Our Services</div>
 
-    <div class="service">
-      <h3>Architecture</h3>
-      <p>
-        Architectural planning, concept development,
-        space planning and detailed design.
-      </p>
-    </div>
+<h2 class="section-title">
+From concept to completion
+</h2>
+</div>
 
-    <div class="service">
-      <h3>Structural Design</h3>
-      <p>
-        Structural analysis, design, detailing and
-        engineering solutions for new and existing buildings.
-      </p>
-    </div>
+<p>
+Comprehensive design and construction solutions
+for spaces that inspire, perform and last.
+</p>
 
-    <div class="service">
-      <h3>Turnkey Construction</h3>
-      <p>
-        Complete construction management from foundation
-        to finishing and handover.
-      </p>
-    </div>
+</div>
 
-    <div class="service">
-      <h3>Interiors</h3>
-      <p>
-        Functional and refined interior solutions
-        designed around the way you live and work.
-      </p>
-    </div>
+<div class="services">
 
-    <div class="service">
-      <h3>Estimation & BOQ</h3>
-      <p>
-        Detailed quantity estimation, BOQ preparation,
-        material specifications and cost planning.
-      </p>
-    </div>
+<div class="service">
+<div class="service-number">01</div>
+<h3>Architecture</h3>
+<p>Concept development, planning and design.</p>
+</div>
 
-    <div class="service">
-      <h3>Structural Audit</h3>
-      <p>
-        Site inspections, structural assessments,
-        technical reports and repair recommendations.
-      </p>
-    </div>
+<div class="service">
+<div class="service-number">02</div>
+<h3>Structural Design</h3>
+<p>Analysis, design and technical detailing.</p>
+</div>
 
-  </div>
+<div class="service">
+<div class="service-number">03</div>
+<h3>Turnkey Construction</h3>
+<p>End-to-end construction with quality and discipline.</p>
+</div>
+
+<div class="service">
+<div class="service-number">04</div>
+<h3>Interior Design</h3>
+<p>Functional and refined interior spaces.</p>
+</div>
+
+<div class="service">
+<div class="service-number">05</div>
+<h3>Estimation & BOQ</h3>
+<p>Accurate estimation and material specifications.</p>
+</div>
+
+<div class="service">
+<div class="service-number">06</div>
+<h3>Structural Audit</h3>
+<p>Site inspection and structural assessment.</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- PROJECTS -->
 
-<section id="projects">
+<section class="projects-section" id="projects">
 
-  <div class="section-label">
-    Selected work
-  </div>
+<div class="container">
 
-  <h2>
-    Projects
-  </h2>
+<div class="projects-heading">
 
-  <div class="projects">
+<div>
+<div class="section-label">Featured Projects</div>
+<h2 class="section-title">Spaces that tell stories</h2>
+</div>
 
-    <div class="project">
-      <img
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-        alt="Residential architecture">
-    </div>
+<a href="#contact" class="view-all">View all projects →</a>
 
-    <div class="project">
-      <img
-        src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
-        alt="Modern interior">
-    </div>
+</div>
 
-    <div class="project">
-      <img
-        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-        alt="Modern house">
-    </div>
+<div class="projects">
 
-    <div class="project">
-      <img
-        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
-        alt="Architecture project">
-    </div>
+<div class="project">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85">
+<div class="project-info">
+<div class="project-category">Residential</div>
+<div class="project-title">Homes designed for better living</div>
+</div>
+</div>
 
-  </div>
+<div class="project">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85">
+<div class="project-info">
+<div class="project-category">Commercial</div>
+<div class="project-title">Functional and future-ready spaces</div>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85">
+<div class="project-info">
+<div class="project-category">Interiors</div>
+<div class="project-title">Spaces with purpose and character</div>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=85">
+<div class="project-info">
+<div class="project-category">Structural</div>
+<div class="project-title">Strong foundations for lasting spaces</div>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -428,116 +744,174 @@
 
 <section id="about">
 
-  <div class="section-label">
-    About us
-  </div>
+<div class="container about">
 
-  <div class="about">
+<div class="about-image"></div>
 
-    <h2>
-      Built on experience.
-    </h2>
+<div class="about-content">
 
-    <p>
-      Urban Space Design is an architecture, structural
-      design and construction practice focused on creating
-      spaces that balance aesthetics, functionality and
-      engineering.
-    </p>
+<div class="section-label">About Urban Space Design</div>
 
-    <br>
+<h2 class="section-title">
+Practising since 8+ years
+</h2>
 
-    <p>
-      With over 8 years of professional experience, we work
-      closely with clients from concept and planning through
-      design, engineering and construction.
-    </p>
+<p>
+Urban Space Design is a multidisciplinary practice
+offering architectural design, structural engineering,
+construction and interior solutions.
+</p>
 
-  </div>
+<p>
+We combine design thinking with technical expertise
+to create functional, aesthetic and well-engineered spaces.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<strong>8+</strong>
+<span>Years of Experience</span>
+</div>
+
+<div class="stat">
+<strong>50+</strong>
+<span>Projects & Consultancies</span>
+</div>
+
+<div class="stat">
+<strong>100%</strong>
+<span>Client Focus</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- PROCESS -->
 
-<section>
+<section class="process-section" id="process">
 
-  <div class="section-label">
-    Our process
-  </div>
+<div class="container">
 
-  <h2>
-    From idea<br>
-    to reality.
-  </h2>
+<div class="section-label">Our Process</div>
 
-  <div class="process">
+<h2 class="section-title">
+From idea to reality.
+</h2>
 
-    <div class="process-item">
-      <div class="number">01</div>
-      <h3>Consultation</h3>
-      <p>Understanding your requirements and vision.</p>
-    </div>
+<div class="process">
 
-    <div class="process-item">
-      <div class="number">02</div>
-      <h3>Design</h3>
-      <p>Planning, architecture and engineering.</p>
-    </div>
+<div class="process-item">
+<div class="process-number">01</div>
+<h3>Consultation</h3>
+<p>Understanding your requirements, site and vision.</p>
+</div>
 
-    <div class="process-item">
-      <div class="number">03</div>
-      <h3>Construction</h3>
-      <p>Executing the project with technical control.</p>
-    </div>
+<div class="process-item">
+<div class="process-number">02</div>
+<h3>Design</h3>
+<p>Planning, architecture and engineering.</p>
+</div>
 
-    <div class="process-item">
-      <div class="number">04</div>
-      <h3>Handover</h3>
-      <p>Completing and delivering your space.</p>
-    </div>
+<div class="process-item">
+<div class="process-number">03</div>
+<h3>Construction</h3>
+<p>Executing the project with technical control.</p>
+</div>
 
-  </div>
+<div class="process-item">
+<div class="process-number">04</div>
+<h3>Handover</h3>
+<p>Completing and delivering your space.</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- CONTACT -->
 
-<section id="contact" class="contact">
+<section class="contact" id="contact">
 
-  <div class="contact-inner">
+<div class="container contact-grid">
 
-    <div class="section-label">
-      Start a project
-    </div>
+<div>
 
-    <h2>
-      Have a project in mind?
-      Let's talk.
-    </h2>
+<div class="section-label">Let's build your next space</div>
 
-    <a
-      href="https://wa.me/91XXXXXXXXXX"
-      class="button">
-      WhatsApp Us
-    </a>
+<h2>
+Get in touch.
+</h2>
 
-    <a
-      href="mailto:your@email.com"
-      class="button">
-      Email Us
-    </a>
+<p class="contact-text">
+Have a project in mind? Let's discuss how we can
+bring it to life.
+</p>
 
-  </div>
+<div class="buttons">
+
+<a href="mailto:urbanspacedes94@gmail.com"
+class="btn btn-light">
+Contact Us →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-details">
+
+<div>
+<span>Email</span>
+<a href="mailto:urbanspacedes94@gmail.com">
+urbanspacedes94@gmail.com
+</a>
+</div>
+
+<div>
+<span>Instagram</span>
+<a href="https://instagram.com/" target="_blank">
+Follow us on Instagram
+</a>
+</div>
+
+<div>
+<span>Location</span>
+<span style="color:#fff;font-size:15px;letter-spacing:0;text-transform:none;">
+Bangalore, India
+</span>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <footer>
 
-  © 2026 Urban Space Design.
-  All Rights Reserved.
+<div class="container footer-inner">
+
+<div>
+© 2026 Urban Space Design. All Rights Reserved.
+</div>
+
+<div>
+Architecture • Structure • Construction • Interiors
+</div>
+
+</div>
 
 </footer>
 
