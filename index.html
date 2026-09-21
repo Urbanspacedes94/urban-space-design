@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Urban Space Design | Architecture & Construction</title>
+
+  <meta name="description"
+        content="Urban Space Design provides architectural design, structural design, construction and interior solutions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f5;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(247,247,245,0.95);
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #171717;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 25px 70px;
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.35),
+          rgba(0,0,0,0.35)
+        ),
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: auto;
+      width: 100%;
+    }
+
+    .hero p {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 85px);
+      line-height: 1;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      background: white;
+      color: #111;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .button.dark {
+      background: #111;
+      color: white;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 25px;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 6vw, 55px);
+      line-height: 1.1;
+      margin-bottom: 45px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: #ccc;
+    }
+
+    .service {
+      background: #f7f7f5;
+      padding: 40px 30px;
+      min-height: 190px;
+    }
+
+    .service h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background: #ddd;
+      min-height: 300px;
+      overflow: hidden;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.04);
+    }
+
+    .about {
+      max-width: 850px;
+    }
+
+    .about p {
+      font-size: 20px;
+      color: #444;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .process-item {
+      border-top: 1px solid #999;
+      padding-top: 20px;
+    }
+
+    .number {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .process-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      background: #171717;
+      color: white;
+      max-width: none;
+    }
+
+    .contact-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 25px;
+    }
+
+    .contact h2 {
+      max-width: 700px;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 25px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+
+      nav a {
+        display: none;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .services,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">URBAN SPACE DESIGN</div>
+
+    <div>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <p>Architecture • Structure • Construction</p>
+
+    <h1>
+      Designing spaces.<br>
+      Building possibilities.
+    </h1>
+
+    <div class="hero-description">
+      Urban Space Design is a multidisciplinary design and
+      construction practice creating thoughtful, functional
+      and timeless spaces.
+    </div>
+
+    <a href="#projects" class="button">
+      View Projects
+    </a>
+
+    <a href="#contact" class="button dark">
+      Start Your Project
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+  <div class="section-label">
+    What we do
+  </div>
+
+  <h2>
+    Design to<br>
+    construction.
+  </h2>
+
+  <div class="services">
+
+    <div class="service">
+      <h3>Architecture</h3>
+      <p>
+        Architectural planning, concept development,
+        space planning and detailed design.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>Structural Design</h3>
+      <p>
+        Structural analysis, design, detailing and
+        engineering solutions for new and existing buildings.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>Turnkey Construction</h3>
+      <p>
+        Complete construction management from foundation
+        to finishing and handover.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>Interiors</h3>
+      <p>
+        Functional and refined interior solutions
+        designed around the way you live and work.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>Estimation & BOQ</h3>
+      <p>
+        Detailed quantity estimation, BOQ preparation,
+        material specifications and cost planning.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>Structural Audit</h3>
+      <p>
+        Site inspections, structural assessments,
+        technical reports and repair recommendations.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+  <div class="section-label">
+    Selected work
+  </div>
+
+  <h2>
+    Projects
+  </h2>
+
+  <div class="projects">
+
+    <div class="project">
+      <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+        alt="Residential architecture">
+    </div>
+
+    <div class="project">
+      <img
+        src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+        alt="Modern interior">
+    </div>
+
+    <div class="project">
+      <img
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+        alt="Modern house">
+    </div>
+
+    <div class="project">
+      <img
+        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+        alt="Architecture project">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="section-label">
+    About us
+  </div>
+
+  <div class="about">
+
+    <h2>
+      Built on experience.
+    </h2>
+
+    <p>
+      Urban Space Design is an architecture, structural
+      design and construction practice focused on creating
+      spaces that balance aesthetics, functionality and
+      engineering.
+    </p>
+
+    <br>
+
+    <p>
+      With over 8 years of professional experience, we work
+      closely with clients from concept and planning through
+      design, engineering and construction.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section>
+
+  <div class="section-label">
+    Our process
+  </div>
+
+  <h2>
+    From idea<br>
+    to reality.
+  </h2>
+
+  <div class="process">
+
+    <div class="process-item">
+      <div class="number">01</div>
+      <h3>Consultation</h3>
+      <p>Understanding your requirements and vision.</p>
+    </div>
+
+    <div class="process-item">
+      <div class="number">02</div>
+      <h3>Design</h3>
+      <p>Planning, architecture and engineering.</p>
+    </div>
+
+    <div class="process-item">
+      <div class="number">03</div>
+      <h3>Construction</h3>
+      <p>Executing the project with technical control.</p>
+    </div>
+
+    <div class="process-item">
+      <div class="number">04</div>
+      <h3>Handover</h3>
+      <p>Completing and delivering your space.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+  <div class="contact-inner">
+
+    <div class="section-label">
+      Start a project
+    </div>
+
+    <h2>
+      Have a project in mind?
+      Let's talk.
+    </h2>
+
+    <a
+      href="https://wa.me/91XXXXXXXXXX"
+      class="button">
+      WhatsApp Us
+    </a>
+
+    <a
+      href="mailto:your@email.com"
+      class="button">
+      Email Us
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  © 2026 Urban Space Design.
+  All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
